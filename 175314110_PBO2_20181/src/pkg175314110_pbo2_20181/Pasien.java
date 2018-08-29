@@ -11,7 +11,7 @@ package pkg175314110_pbo2_20181;
  */
 public class Pasien {
 
-     private String nama;
+    private String nama;
     private String noRekamMedis;
     private String alamat;
     private int tempatLahir;
@@ -59,7 +59,7 @@ public class Pasien {
         return tanggalLahir;
     }
 
-    public void setTanggalLahir(int tanggalLahir)throws Exception {
+    public void setTanggalLahir(int tanggalLahir) throws Exception {
         if (tanggalLahir > 0 && tanggalLahir <= 31) {
             this.tanggalLahir = tanggalLahir;
         } else {
@@ -71,7 +71,7 @@ public class Pasien {
         return bulanLahir;
     }
 
-    public void setBulanLahir(int bulanLahir)throws Exception {
+    public void setBulanLahir(int bulanLahir) throws Exception {
         if (bulanLahir > 0 && bulanLahir <= 12) {
             this.bulanLahir = bulanLahir;
         } else {
@@ -83,7 +83,7 @@ public class Pasien {
         return tahunLahir;
     }
 
-    public void setTahunLahir(int tahunLahir)throws Exception{
+    public void setTahunLahir(int tahunLahir) throws Exception {
         if (tahunLahir >= 0) {
             this.tahunLahir = tahunLahir;
         } else {
