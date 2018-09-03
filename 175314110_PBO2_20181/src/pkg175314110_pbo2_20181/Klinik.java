@@ -32,5 +32,4 @@ public class Klinik {
     public void setNama(String nama) {
         this.nama = nama;
     }
-    
 }

@@ -10,6 +10,7 @@ package pkg175314110_pbo2_20181;
  * @author admin
  */
 public class Dokter {
+
     private String noPegawai;
     private String nama;
     private String alamat;
@@ -56,9 +57,13 @@ public class Dokter {
         return tanggalLahir;
     }
 
-    public void setTanggalLahir (int tanggalLahir) throws Exception {
-        if (tanggalLahir > 0 && tanggalLahir <= 31){
-            this.tanggalLahir = tanggalLahir; 
+    public void setTanggalLahir(int tanggalLahir) throws Exception {
+        try {
+            if (tanggalLahir > 0 && tanggalLahir <= 31) {
+                this.tanggalLahir = tanggalLahir;
+            }
+        } catch (Exception ex) {
+            throw new Exception("Tanggalnya salah bos . . .");
         }
-    }   
+    }
 }

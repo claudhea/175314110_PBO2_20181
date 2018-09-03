@@ -60,9 +60,11 @@ public class Pasien {
     }
 
     public void setTanggalLahir(int tanggalLahir) throws Exception {
-        if (tanggalLahir > 0 && tanggalLahir <= 31) {
-            this.tanggalLahir = tanggalLahir;
-        } else {
+        try {
+            if (tanggalLahir > 0 && tanggalLahir <= 31) {
+                this.tanggalLahir = tanggalLahir;
+            }
+        } catch (Exception ex) {
             throw new Exception("tanggalnya salah bos . . .");
         }
     }
@@ -72,9 +74,11 @@ public class Pasien {
     }
 
     public void setBulanLahir(int bulanLahir) throws Exception {
-        if (bulanLahir > 0 && bulanLahir <= 12) {
-            this.bulanLahir = bulanLahir;
-        } else {
+        try {
+            if (bulanLahir > 0 && bulanLahir <= 12) {
+                this.bulanLahir = bulanLahir;
+            }
+        } catch (Exception ex) {
             throw new Exception("bulannya salah bos . . .");
         }
     }
@@ -84,10 +88,13 @@ public class Pasien {
     }
 
     public void setTahunLahir(int tahunLahir) throws Exception {
-        if (tahunLahir >= 0) {
-            this.tahunLahir = tahunLahir;
-        } else {
+        try {
+            if (tahunLahir >= 0) {
+                this.tahunLahir = tahunLahir;
+            }
+        } catch (Exception ex) {
             throw new Exception("tahunnya salah bos . . .");
         }
+
     }
 }

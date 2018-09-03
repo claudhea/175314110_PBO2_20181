@@ -9,13 +9,13 @@ package pkg175314110_pbo2_20181;
  *
  * @author admin
  */
-public class AntrianPasien extends Pasien{
-    
-private int tanggalAntrian;    
-private int bulanAntrian;    
-private int tahunAntrian;    
-private Klinik klinik;    
-private Pasien daftarPasien[];    
+public class AntrianPasien extends Pasien {
+
+    private int tanggalAntrian;
+    private int bulanAntrian;
+    private int tahunAntrian;
+    private Klinik klinik;
+    private Pasien daftarPasien[];
 
     public AntrianPasien(String nama) {
         super(nama);
@@ -26,9 +26,11 @@ private Pasien daftarPasien[];
     }
 
     public void setTanggalAntrian(int tanggalAntrian) throws Exception {
-        if (tanggalAntrian > 0 && tanggalAntrian <= 31) {
-            this.tanggalAntrian = tanggalAntrian;
-        } else {
+        try {
+            if (tanggalAntrian > 0 && tanggalAntrian <= 31) {
+                this.tanggalAntrian = tanggalAntrian;
+            }
+        } catch (Exception ex) {
             throw new Exception("tanggalnya salah bos . . .");
         }
     }
@@ -38,9 +40,11 @@ private Pasien daftarPasien[];
     }
 
     public void setBulanAntrian(int bulanAntrian) throws Exception {
-        if (bulanAntrian > 0 && bulanAntrian <= 12) {
-            this.bulanAntrian = bulanAntrian;
-        } else {
+        try {
+            if (bulanAntrian > 0 && bulanAntrian <= 12) {
+                this.bulanAntrian = bulanAntrian;
+            }
+        } catch (Exception ex) {
             throw new Exception("bulannya salah bos . . .");
         }
     }
@@ -50,9 +54,11 @@ private Pasien daftarPasien[];
     }
 
     public void setTahunAntrian(int tahunAntrian) throws Exception {
-        if (tahunAntrian >= 0) {
-            this.tahunAntrian = tahunAntrian;
-        } else {
+        try {
+            if (tahunAntrian >= 0) {
+                this.tahunAntrian = tahunAntrian;
+            }
+        } catch (Exception ex) {
             throw new Exception("tahunnya salah bos . . .");
         }
     }
