@@ -220,4 +220,12 @@ public class Pasien {
             throw new Exception("tahunnya salah bos . . .");
         }
     }
+    
+    public void DaftarPasienBaru(Pasien pasien){
+        
+    }
+    
+    public Pasien cariPasien(String NoRM){
+    return NoRM;
+    }
 }
