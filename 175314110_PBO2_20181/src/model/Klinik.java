@@ -17,11 +17,12 @@ public class Klinik {
     private String nama;
 
     /**
-     * method Klinik dengan parameter nama bertipe String sebagai construktor
+     * method Klinik dengan parameter nama dan idKlinik bertipe String sebagai construktor
      * @param idKlinik 
      */
-    public Klinik(String idKlinik) {
+    public Klinik(String idKlinik, String nama) {
         this.idKlinik = idKlinik;
+        this.nama = nama;
     }
 
     /**

@@ -5,15 +5,20 @@
  */
 package model;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  *
  * @author admin
  */
-public class Pasien {
+public class Pasien{
 
-    public static void daftarPasienBaru(Pasien Baru){
-        
+    public static void tambahPasienBaru(Pasien pasien) {
+        Pasien.daftarPasien.add(pasien);
     }
+    
     /**
      * variabel nama, alamat yang dideklarasikan sebagai private dengan tipe
      * String variabel noRekamMedis, tempatLahir, tanggalLahir, bulanLahir,
@@ -23,12 +28,12 @@ public class Pasien {
     private String alamat;
     private String noRekamMedis;
     private String nik;
-    private int tempatLahir;
+    private String tempatLahir;
     private int tanggalLahir;
     private int bulanLahir;
     private int tahunLahir;
-    
-    public static ArrayList<Pasien> daftarPasien 
+
+    public static ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
 
     /**
      * method Pasien dengan parameter nama bertipe String sebagai construktor
@@ -37,6 +42,19 @@ public class Pasien {
      */
     public Pasien(String nama) {
         this.nama = nama;
+    }
+
+    /**
+     * constructor untuk mendeklarasikan objek pasien
+     */
+    public Pasien(String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir, String nik) {
+        this.nama = nama;
+        this.alamat = alamat;
+        this.tempatLahir = tempatLahir;
+        this.tanggalLahir = tanggalLahir;
+        this.bulanLahir = bulanLahir;
+        this.tahunLahir = tahunLahir;
+        this.nik = nik;
     }
 
     /**
@@ -58,7 +76,8 @@ public class Pasien {
     }
 
     /**
-     *method untuk membaca Nilai balikan dari variabel Alamat() 
+     * method untuk membaca Nilai balikan dari variabel Alamat()
+     *
      * @return
      */
     public String getAlamat() {
@@ -66,7 +85,8 @@ public class Pasien {
     }
 
     /**
-     *method dengan parameter berupa variabel alamat yang bertipe String
+     * method dengan parameter berupa variabel alamat yang bertipe String
+     *
      * @param alamat
      */
     public void setAlamat(String alamat) {
@@ -86,6 +106,7 @@ public class Pasien {
      * memberitahukan bahwa method tersebut dapat menyebabkan sebuah exception,
      * lalu di cek pada bagian try lalu ditangkap dan ditampilkan pada bagian
      * catch.
+     *
      * @param noRekamMedis
      * @throws Exception
      */
@@ -94,7 +115,7 @@ public class Pasien {
             /**
              * pernyataan yang berpotensi mengakibatkan Exception
              */
-            if (noRekamMedis < 21 && noRekamMedis > 5) {
+            if (noRekamMedis.length() > 6) {
                 this.noRekamMedis = noRekamMedis;
                 /**
                  * jika NoRekamMedis Kurang dari 21 dan lebih Dari 5 Menyimpan
@@ -105,7 +126,7 @@ public class Pasien {
             /**
              * pernyataan disini akan di eksekusi jika terjadi Exception
              */
-            throw new Exception("No Rekam Medis Dibatas 6 - 20 . . .");
+            throw new Exception("No Rekam Medis hanya 6 digit . . .");
         }
     }
 
@@ -114,7 +135,7 @@ public class Pasien {
      *
      * @return
      */
-    public int getTempatLahir() {
+    public String getTempatLahir() {
         return tempatLahir;
     }
 
@@ -123,7 +144,7 @@ public class Pasien {
      *
      * @param tempatLahir
      */
-    public void setTempatLahir(int tempatLahir) {
+    public void setTempatLahir(String tempatLahir) {
         this.tempatLahir = tempatLahir;
     }
 
@@ -178,8 +199,8 @@ public class Pasien {
     public void setBulanLahir(int bulanLahir) throws Exception {
         /**
          * pernyataan yang berpotensi mengakibatkan Exception jika bulanLahir
-         * lebih besar 0 dan bulanLahir kurang dari samadengan 12.
-         * Nilai dari obyek bulanLahir ke variabel bulanLahir
+         * lebih besar 0 dan bulanLahir kurang dari samadengan 12. Nilai dari
+         * obyek bulanLahir ke variabel bulanLahir
          */
         try {
             if (bulanLahir > 0 && bulanLahir <= 12) {
@@ -226,12 +247,39 @@ public class Pasien {
             throw new Exception("tahunnya salah bos . . .");
         }
     }
-    
-    public void DaftarPasienBaru(Pasien pasien){
-        
+
+    public String getNik() {
+        return nik;
     }
-    
-    public Pasien cariPasien(String NoRM){
-    return NoRM;
+
+    public void setNik(String nik) {
+        this.nik = nik;
+    }
+
+    /**
+     * method untuk membuat nomor rekam medis yang terdiri dari tanggal pasien
+     * mengatri ditambah 3 huruf pertama dari nama
+     *
+     * @return
+     */
+    public String BuatNomorRekamMedis() {
+        String nomorRekamMEdis;
+        Date date = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat(" ");
+        nomorRekamMEdis = ft.format(date) + nama.substring(0, 3);
+        return nomorRekamMEdis;
+    }
+
+    public void DaftarPasienBaru(Pasien pasien) {
+        daftarPasien.add(pasien);
+    }
+
+    public static Pasien cariPasien(String noRekamMedis) {
+        for (int i = 0; i < daftarPasien.size(); i++) {
+            if (daftarPasien.get(i).getNoRekamMedis() == noRekamMedis) {
+                return daftarPasien.get(i);
+            }
+        }
+        return null;
     }
 }

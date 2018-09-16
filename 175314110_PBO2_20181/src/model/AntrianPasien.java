@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author admin
@@ -19,7 +21,8 @@ public class AntrianPasien extends Pasien {
     private int bulanAntrian;
     private int tahunAntrian;
     private Klinik klinik;
-    private Pasien daftarPasien[];
+//    private Pasien daftarPasien[];
+    private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
 
     /**
      * method AntrianPasien dengan parameter nama bertipe String sebagai construktor
@@ -143,19 +146,47 @@ public class AntrianPasien extends Pasien {
         this.klinik = klinik;
     }
 
+//    /**
+//     * method untuk membaca Nilai balikan dari variabel DaftarPasien()
+//     * @return 
+//     */
+//    public Pasien[] getDaftarPasien() {
+//        return daftarPasien;
+//    }
+//
+//    /**
+//     * method dengan parameter berupa variabel daftarPasien yang bertipe Pasien[]
+//     * @param daftarPasien 
+//     */
+//    public void setDaftarPasien(Pasien[] daftarPasien) {
+//        this.daftarPasien = daftarPasien;
+//    }
+    
     /**
-     * method untuk membaca Nilai balikan dari variabel DaftarPasien() 
+     * pengambalian nilai dari variabel daftarPasien
      * @return 
      */
-    public Pasien[] getDaftarPasien() {
+    public ArrayList<Pasien> getDaftarPasien() {
         return daftarPasien;
     }
 
     /**
-     * method dengan parameter berupa variabel daftarPasien yang bertipe Pasien[]
+     * suatu method untuk nilai dari variabel daftarPasien dengan variabel
+     * lokal daftarPasien yang bertipe ArrayList pasien
      * @param daftarPasien 
      */
-    public void setDaftarPasien(Pasien[] daftarPasien) {
+    public void setDaftarPasien(ArrayList<Pasien> daftarPasien) {
         this.daftarPasien = daftarPasien;
+    }
+    
+    /**
+     * Method untuk mendaftar pasien baru di nomor antrian
+     *
+     * @param pasien
+     * @throws Exception
+     */
+    public void Mendaftar(Pasien pasien) {
+        // mengisi data pada variabel daftarPasien dengan variabel lokal daftarPasien 
+        daftarPasien.add(pasien);
     }
 }
