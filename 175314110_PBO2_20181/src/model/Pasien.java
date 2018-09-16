@@ -11,6 +11,9 @@ package model;
  */
 public class Pasien {
 
+    public static void daftarPasienBaru(Pasien Baru){
+        
+    }
     /**
      * variabel nama, alamat yang dideklarasikan sebagai private dengan tipe
      * String variabel noRekamMedis, tempatLahir, tanggalLahir, bulanLahir,
@@ -18,11 +21,14 @@ public class Pasien {
      */
     private String nama;
     private String alamat;
-    private int noRekamMedis;
+    private String noRekamMedis;
+    private String nik;
     private int tempatLahir;
     private int tanggalLahir;
     private int bulanLahir;
     private int tahunLahir;
+    
+    public static ArrayList<Pasien> daftarPasien 
 
     /**
      * method Pasien dengan parameter nama bertipe String sebagai construktor
@@ -72,7 +78,7 @@ public class Pasien {
      *
      * @return
      */
-    public int getNoRekamMedis() {
+    public String getNoRekamMedis() {
         return noRekamMedis;
     }
 
@@ -83,7 +89,7 @@ public class Pasien {
      * @param noRekamMedis
      * @throws Exception
      */
-    public void setNoRekamMedis(int noRekamMedis) throws Exception {
+    public void setNoRekamMedis(String noRekamMedis) throws Exception {
         try {
             /**
              * pernyataan yang berpotensi mengakibatkan Exception
