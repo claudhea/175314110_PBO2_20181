@@ -14,8 +14,8 @@ import model.Pasien;
 public class testKelasPasien {
 
     public static void main(String[] args) {
-        Pasien test = new Pasien("Puspa", "Klaten", "Medan", 12, 01, 1974, "19740112");
-        Pasien test1 = new Pasien("Budi", "Klaten", "Klaten", 10, 01, 1999, "19990110");
+        Pasien test = new Pasien("Tika", "Klaten", "Medan", 12, 01, 1974, "19740112");
+        Pasien test1 = new Pasien("Raka", "Klaten", "Klaten", 10, 01, 1999, "19990110");
 
         Pasien.tambahPasienBaru(test);
         Pasien.tambahPasienBaru(test1);
