@@ -44,34 +44,6 @@ public class DaftarAntrianDialog extends JDialog implements ActionListener {
     public void init() {
         this.setLayout(null);
 
-//        JudulLabel = new JLabel("DAFTAR PASIEN");
-//        JudulLabel.setBounds(100, 10, 150, 10);
-//        this.add(JudulLabel);
-//
-//        noRekamMedis = new JLabel("NoRM    :");
-//        noRekamMedis.setBounds(20, 50, 50, 10);
-//        this.add(noRekamMedis);
-//        namaText = new JTextField();
-//        namaText.setBounds(100, 45, 150, 20);
-//        this.add(namaText);
-//        
-//        namaLabel = new JLabel("Nama    :");
-//        namaLabel.setBounds(20, 70, 50, 10);
-//        this.add(namaLabel);
-//        namaText = new JTextField();
-//        namaText.setBounds(100, 65, 150, 20);
-//        this.add(namaText);
-//        
-//        alamat = new JLabel("Alamat  :");
-//        alamat.setBounds(20, 90, 50, 10);
-//        this.add(alamat);
-//        namaText = new JTextField();
-//        namaText.setBounds(100, 85, 150, 20);
-//        this.add(namaText);
-//
-//        saveButton = new JButton("SIMPAN");
-//        saveButton.setBounds(100, 150, 100, 25);
-//        this.add(saveButton);
         JudulLabel = new JLabel();
         JudulLabel.setText("Formulir Daftar Antrian");
         JudulLabel.setFont(new Font(null, Font.CENTER_BASELINE, 16));
