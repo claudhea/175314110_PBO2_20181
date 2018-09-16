@@ -14,8 +14,8 @@ import view.DaftarAntrianDialog;
  */
 public class testDaftarAntrianDialog {
     public static void main(String[] args) {
-        DaftarAntrianDialog  test = new DaftarAntrianDialog ("latihan");
-        test.setSize(300, 250);       
+        DaftarAntrianDialog  test = new DaftarAntrianDialog ("Daftar Antrian Pasien ");
+        test.setSize(500, 400);       
         test.setVisible(true);
     }
 }
