@@ -44,18 +44,20 @@ public class FrameUtama extends JFrame implements ActionListener {
 
         this.setTitle("Menu Pendaftaran");
         pasienMenu = new JMenu("File");
-//        tambahPasienMenuItem = new JMenuItem("File");
+        tambahPasienMenuItem = new JMenuItem (" pasien");
         DaftarPasienMenu = new JMenu("Tambah Pasien");
         tambahAntrianMenu = new JMenu("Tambah Antrian");
         exitMenu = new JMenu("Exit");
 
         menuBar.add(pasienMenu);
+        tambahPasienMenuItem.add(tambahPasienMenuItem);
         pasienMenu.add(DaftarPasienMenu);
         pasienMenu.add(tambahAntrianMenu);
         pasienMenu.add(exitMenu);
 
         this.setJMenuBar(menuBar);
 
+        tambahPasienMenuItem.addActionListener(this);
         DaftarPasienMenu.addActionListener(this);
         tambahAntrianMenu.addActionListener(this);
         exitMenu.addActionListener(this);
@@ -64,6 +66,11 @@ public class FrameUtama extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent antri) {
+        if (antri.getSource() == tambahPasienMenuItem) {
+            TambahPasienBaruDialog test = new TambahPasienBaruDialog("Formulir Tambah Pasien");
+            test.setSize(600, 500);
+            test.setVisible(true);
+        }
         if (antri.getSource() == DaftarPasienMenu) {
             TambahPasienBaruDialog test = new TambahPasienBaruDialog("Formulir Tambah Pasien");
             test.setSize(600, 500);
