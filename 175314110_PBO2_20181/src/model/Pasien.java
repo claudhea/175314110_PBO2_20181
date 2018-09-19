@@ -274,9 +274,9 @@ public class Pasien{
         daftarPasien.add(pasien);
     }
 
-    public static Pasien cariPasien(String noRM) {
+    public static Pasien cariPasien(String noRekamMedis) {
         for (int i = 0; i < daftarPasien.size(); i++) {
-            if (daftarPasien.get(i).getNoRM() == noRekamMedis) {
+            if (daftarPasien.get(i).getNoRekamMedis() == noRekamMedis) {
                 return daftarPasien.get(i);
             }
         }
