@@ -24,7 +24,7 @@ import model.Pasien;
  *
  * @author User
  */
-public class DaftarPasienBaru extends JDialog implements ActionListener{
+public class TambahPasienBaruDialog extends JDialog implements ActionListener{
     private JLabel JudulLabel;
     private JLabel namaLabel;
     private JLabel alamatLabel;
@@ -56,11 +56,11 @@ public class DaftarPasienBaru extends JDialog implements ActionListener{
         "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014",
         "2015", "2016", "2017", "2018"};
     
-    public DaftarPasienBaru() {
+    public TambahPasienBaruDialog() {
         init();
     }
 
-    public DaftarPasienBaru(String title) {
+    public TambahPasienBaruDialog(String title) {
         this.setTitle(title);
         init();
     }
@@ -68,28 +68,6 @@ public class DaftarPasienBaru extends JDialog implements ActionListener{
     public void init() {
         this.setLayout(null);
 
-//        JudulLabel = new JLabel("DAFTAR PASIEN BARU");
-//        JudulLabel.setBounds(100, 10, 150, 10);
-//        this.add(JudulLabel);
-//        
-//        namaLabel = new JLabel("Nama    :");
-//        namaLabel.setBounds(20, 70, 50, 10);
-//        this.add(namaLabel);
-//        namaText = new JTextField();
-//        namaText.setBounds(100, 65, 150, 20);
-//        this.add(namaText);
-//        
-//        alamat = new JLabel("Alamat  :");
-//        alamat.setBounds(20, 90, 50, 10);
-//        this.add(alamat);
-//        namaText = new JTextField();
-//        namaText.setBounds(100, 85, 150, 20);
-//        this.add(namaText);
-//
-//        saveButton = new JButton("SIMPAN");
-//        saveButton.setBounds(100, 150, 100, 25);
-//        this.add(saveButton);
-//    }
         JudulLabel = new JLabel();
         JudulLabel.setText("FORMULIR DAFTAR PASIEN");
         JudulLabel.setFont(new Font(null, Font.CENTER_BASELINE, 16));
@@ -182,7 +160,7 @@ public class DaftarPasienBaru extends JDialog implements ActionListener{
             try {
                 baru.setNoRekamMedis(noRekamMedisText.getText());
             } catch (Exception ex) {
-                Logger.getLogger(DaftarPasienBaru.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(TambahPasienBaruDialog.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             Pasien.tambahPasienBaru(baru);

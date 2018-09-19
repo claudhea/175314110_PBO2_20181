@@ -19,7 +19,7 @@ import model.Pasien;
  *
  * @author User
  */
-public class DaftarAntrianDialog extends JDialog implements ActionListener {
+public class TambahAntrianDialog extends JDialog implements ActionListener {
 
     private JLabel JudulLabel;
     private JLabel namaLabel;
@@ -32,11 +32,11 @@ public class DaftarAntrianDialog extends JDialog implements ActionListener {
     private JButton antriButton;
     private JButton tambahButton;
 
-    public DaftarAntrianDialog() {
+    public TambahAntrianDialog() {
         init();
     }
 
-    public DaftarAntrianDialog(String title) {
+    public TambahAntrianDialog(String title) {
         this.setTitle(title);
         init();
     }

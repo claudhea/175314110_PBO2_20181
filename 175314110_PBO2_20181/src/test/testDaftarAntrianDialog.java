@@ -5,7 +5,7 @@
  */
 package test;
 
-import view.DaftarAntrianDialog;
+import view.TambahAntrianDialog;
 
 
 /**
@@ -14,7 +14,7 @@ import view.DaftarAntrianDialog;
  */
 public class testDaftarAntrianDialog {
     public static void main(String[] args) {
-        DaftarAntrianDialog  test = new DaftarAntrianDialog ("Daftar Antrian Pasien ");
+        TambahAntrianDialog  test = new TambahAntrianDialog ("Daftar Antrian Pasien ");
         test.setSize(500, 400);       
         test.setVisible(true);
     }

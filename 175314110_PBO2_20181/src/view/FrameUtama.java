@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import model.Pasien;
 
 /**
  *
@@ -22,20 +24,30 @@ public class FrameUtama extends JFrame implements ActionListener {
     private JMenu DaftarPasienMenu;
     private JMenu tambahAntrianMenu;
     private JMenu exitMenu;
+    private JMenuItem tambahPasienMenuItem;
 
     public FrameUtama() {
         init();
     }
-
+    
+    public FrameUtama(Pasien pasien){
+        Pasien.daftarPasien.add(pasien);
+    }
+    
+    public static void TambahAntrianBaru(Pasien pasien) {
+        Pasien.daftarPasien.add(pasien);
+    }
+    
     public void init() {
 
         menuBar = new JMenuBar();
 
-        this.setTitle("Frame");
-        pasienMenu = new JMenu("Pasien");
+        this.setTitle("Menu Pendaftaran");
+        pasienMenu = new JMenu("File");
+//        tambahPasienMenuItem = new JMenuItem("File");
         DaftarPasienMenu = new JMenu("Tambah Pasien");
         tambahAntrianMenu = new JMenu("Tambah Antrian");
-        exitMenu = new JMenu("Keluar");
+        exitMenu = new JMenu("Exit");
 
         menuBar.add(pasienMenu);
         pasienMenu.add(DaftarPasienMenu);
@@ -53,12 +65,12 @@ public class FrameUtama extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent antri) {
         if (antri.getSource() == DaftarPasienMenu) {
-            DaftarPasienBaru test = new DaftarPasienBaru("Formulir Tambah Pasien");
+            TambahPasienBaruDialog test = new TambahPasienBaruDialog("Formulir Tambah Pasien");
             test.setSize(600, 500);
             test.setVisible(true);
         }
         if (antri.getSource() == tambahAntrianMenu) {
-            DaftarAntrianDialog test1 = new DaftarAntrianDialog("Formulir Tambah Antrian Pasien");
+            TambahAntrianDialog test1 = new TambahAntrianDialog("Formulir Tambah Antrian Pasien");
             test1.setSize(600, 500);
             test1.setVisible(true);
         }

@@ -21,7 +21,9 @@ public class AntrianPasien extends Pasien {
     private int bulanAntrian;
     private int tahunAntrian;
     private Klinik klinik;
-//    private Pasien daftarPasien[];
+    private Pasien daftarPasienAntri[];
+    private AntrianPasien daftarAntrian[];
+    
     private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
 
     /**
@@ -146,21 +148,21 @@ public class AntrianPasien extends Pasien {
         this.klinik = klinik;
     }
 
-//    /**
-//     * method untuk membaca Nilai balikan dari variabel DaftarPasien()
-//     * @return 
-//     */
-//    public Pasien[] getDaftarPasien() {
-//        return daftarPasien;
-//    }
-//
-//    /**
-//     * method dengan parameter berupa variabel daftarPasien yang bertipe Pasien[]
-//     * @param daftarPasien 
-//     */
-//    public void setDaftarPasien(Pasien[] daftarPasien) {
-//        this.daftarPasien = daftarPasien;
-//    }
+    public Pasien[] getDaftarPasienAntri() {
+        return daftarPasienAntri;
+    }
+
+    public void setDaftarPasienAntri(Pasien[] daftarPasienAntri) {
+        this.daftarPasienAntri = daftarPasienAntri;
+    }
+
+    public AntrianPasien[] getDaftarAntrian() {
+        return daftarAntrian;
+    }
+
+    public void setDaftarAntrian(AntrianPasien[] daftarAntrian) {
+        this.daftarAntrian = daftarAntrian;
+    }
     
     /**
      * pengambalian nilai dari variabel daftarPasien
@@ -185,8 +187,18 @@ public class AntrianPasien extends Pasien {
      * @param pasien
      * @throws Exception
      */
-    public void Mendaftar(Pasien pasien) {
-        // mengisi data pada variabel daftarPasien dengan variabel lokal daftarPasien 
+    public void Mendaftar(Pasien pasien, int tanggal, int bulan, int tahun) {
+        // mengisi data pada variabel daftarPasien dengan variabel lokal daftarPasien
+        tahunAntrian = tanggal;
+        bulanAntrian = bulan;
+        tahunAntrian = tahun;
         daftarPasien.add(pasien);
+    }
+    
+    public void buatAntrian(int tanggal, int bulan, int tahun, Klinik klinik){
+        tahunAntrian = tanggal;
+        bulanAntrian = bulan;
+        tahunAntrian = tahun;
+        this.klinik = klinik;
     }
 }
