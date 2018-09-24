@@ -15,9 +15,7 @@ import java.util.Date;
  */
 public class Pasien{
 
-    public static void tambahPasienBaru(Pasien pasien) {
-        Pasien.daftarPasien.add(pasien);
-    }
+    
     
     /**
      * variabel nama, alamat yang dideklarasikan sebagai private dengan tipe
@@ -268,6 +266,10 @@ public class Pasien{
         SimpleDateFormat ft = new SimpleDateFormat(" ");
         nomorRekamMEdis = ft.format(date) + nama.substring(0, 3);
         return nomorRekamMEdis;
+    }
+    
+    public static void tambahPasienBaru(Pasien pasien) {
+        Pasien.daftarPasien.add(pasien);
     }
 
     public void DaftarPasienBaru(Pasien pasien) {

@@ -22,17 +22,24 @@ public class AntrianPasien extends Pasien {
     private int tahunAntrian;
     private Klinik klinik;
     private Pasien daftarPasienAntri[];
-    private AntrianPasien daftarAntrian[];
+    public AntrianPasien daftarAntrian[];
     
     private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
-
+        
     /**
      * method AntrianPasien dengan parameter nama bertipe String sebagai construktor
      * @param nama 
      */
-    public AntrianPasien(String nama) {
-        super(nama);
-    }
+
+    public AntrianPasien(int tanggalAntrian, int bulanAntrian, int tahunAntrian, Klinik klinik, Pasien[] daftarPasienAntri, AntrianPasien[] daftarAntrian, String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir, String nik) {
+        super(nama, alamat, tempatLahir, tanggalLahir, bulanLahir, tahunLahir, nik);
+        this.tanggalAntrian = tanggalAntrian;
+        this.bulanAntrian = bulanAntrian;
+        this.tahunAntrian = tahunAntrian;
+        this.klinik = klinik;
+        this.daftarPasienAntri = daftarPasienAntri;
+        this.daftarAntrian = daftarAntrian;
+    }    
 
     /**
      * method untuk membaca Nilai balikan dari variabel Tanggal_antrian()
@@ -177,7 +184,7 @@ public class AntrianPasien extends Pasien {
      * lokal daftarPasien yang bertipe ArrayList pasien
      * @param daftarPasien 
      */
-    public void setDaftarPasien(ArrayList<Pasien> daftarPasien) {
+    public void DaftarPasien(ArrayList<Pasien> daftarPasien) {
         this.daftarPasien = daftarPasien;
     }
     
