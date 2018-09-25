@@ -143,13 +143,6 @@ public class TambahPasienBaruDialog extends JDialog implements ActionListener {
         noRekamMedisText.setBounds(150, 250, 120, 20);
         this.add(noRekamMedisText);
 
-//        tambahButton = new JButton();
-//        tambahButton.setText("Tambah");
-//        tambahButton.setBounds(150, 180, 80, 30);
-//        this.add(tambahButton);
-//
-//        tambahButton.addActionListener((ActionListener) this);
-
         saveButton = new JButton();
         saveButton.setText("Simpan");
         saveButton.setBounds(150, 280, 80, 30);

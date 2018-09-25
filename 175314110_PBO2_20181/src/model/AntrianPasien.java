@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author admin
  */
-public class AntrianPasien extends Pasien {
+public class AntrianPasien {
     /**
      * variabel Tanggal_antrian,Bulan_antrian,Tahun_antrian yang dideklarasikan sebagai private dengan tipe integer
      * variabel klinik yang dideklarasikan sebagai private dengan tipe Klinik
@@ -23,8 +23,9 @@ public class AntrianPasien extends Pasien {
     private Klinik klinik;
     private Pasien daftarPasienAntri[];
     public AntrianPasien daftarAntrian[];
-    
-//    private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
+
+    public AntrianPasien() {
+    }
         
     /**
      * method AntrianPasien dengan parameter nama bertipe String sebagai construktor
@@ -32,7 +33,6 @@ public class AntrianPasien extends Pasien {
      */
 
     public AntrianPasien(int tanggalAntrian, int bulanAntrian, int tahunAntrian, Klinik klinik, Pasien[] daftarPasienAntri, AntrianPasien[] daftarAntrian, String nama, String alamat, String tempatLahir, int tanggalLahir, int bulanLahir, int tahunLahir, String nik) {
-        super(nama, alamat, tempatLahir, tanggalLahir, bulanLahir, tahunLahir, nik);
         this.tanggalAntrian = tanggalAntrian;
         this.bulanAntrian = bulanAntrian;
         this.tahunAntrian = tahunAntrian;
@@ -172,33 +172,16 @@ public class AntrianPasien extends Pasien {
     }
     
     /**
-     * pengambalian nilai dari variabel daftarPasien
-     * @return 
-     */
-    public ArrayList<Pasien> getDaftarPasien() {
-        return daftarPasien;
-    }
-
-//    /**
-//     * suatu method untuk nilai dari variabel daftarPasien dengan variabel
-//     * lokal daftarPasien yang bertipe ArrayList pasien
-//     * @param daftarPasien 
-//     */
-//    public void DaftarPasien(ArrayList<Pasien> daftarPasien) {
-//        this.daftarPasien = daftarPasien;
-//    }
-    
-    /**
      * Method untuk mendaftar pasien baru di nomor antrian
      *
      * @param pasien
      * @throws Exception
      */
-    public void Mendaftar(Pasien[] pasien) {
-        this.daftarPasienAntri = pasien;
+    public void Mendaftar(Pasien pasien) {
+  
     }
     
-    public void setDaftarPasien(Pasien[] daftarPasien) {
+    public void setDaftarPasien(Pasien daftarPasien[]) {
         this.daftarPasienAntri = daftarPasien;
     }
     

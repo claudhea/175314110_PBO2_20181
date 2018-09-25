@@ -9,6 +9,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -24,10 +25,16 @@ public class TambahAntrianDialog extends JDialog implements ActionListener {
     private JLabel JudulLabel;
     private JLabel namaLabel;
     private JLabel noRekamMedisLabel;
+    private JLabel tanggalLabel;
+    private JLabel bulanLabel;
+    private JLabel tahunLabel;
     private JLabel alamatLabel;
     private JTextField namaText;
     private JTextField noRekamMedisText;
     private JTextField alamatText;
+    private JComboBox tanggalCombo;
+    private JComboBox bulanCombo;
+    private JComboBox tahunCombo;
     private JButton saveButton;
     private JButton antriButton;
     private JButton tambahButton;
@@ -46,37 +53,60 @@ public class TambahAntrianDialog extends JDialog implements ActionListener {
 
         JudulLabel = new JLabel();
         JudulLabel.setText("Formulir Daftar Antrian");
-        JudulLabel.setFont(new Font(null, Font.CENTER_BASELINE, 16));
         JudulLabel.setBounds(50, 20, 250, 30);
         this.add(JudulLabel);
 
         noRekamMedisLabel = new JLabel();
         noRekamMedisLabel.setText("No. RM");
+        JudulLabel.setFont(new Font("Arial", Font.CENTER_BASELINE, 16));
         noRekamMedisLabel.setBounds(50, 70, 80, 20);
         this.add(noRekamMedisLabel);
 
+        this.setLayout(null);
+        noRekamMedisText = new JTextField();
+        noRekamMedisText.setBounds(110, 70, 120, 20);
+        this.add(noRekamMedisText);
+        
         namaLabel = new JLabel();
         namaLabel.setText("Nama");
         namaLabel.setBounds(50, 100, 80, 20);
         this.add(namaLabel);
+
+        namaText = new JTextField();
+        namaText.setBounds(110, 100, 120, 20);
+        this.add(namaText);
 
         alamatLabel = new JLabel();
         alamatLabel.setText("Alamat");
         alamatLabel.setBounds(50, 130, 80, 20);
         this.add(alamatLabel);
 
-        noRekamMedisText = new JTextField();
-        noRekamMedisText.setBounds(110, 70, 120, 20);
-        this.add(noRekamMedisText);
-
-        namaText = new JTextField();
-        namaText.setBounds(110, 100, 120, 20);
-        this.add(namaText);
-
         alamatText = new JTextField();
         alamatText.setBounds(110, 130, 120, 20);
         this.add(alamatText);
+        
+        JudulLabel = new JLabel("Tanggal :");
+        JudulLabel.setBounds(50, 110, 150, 30);
+        this.add(JudulLabel);
+        
+        this.setLayout(null);
+        tanggalLabel = new JLabel("TANGGAL");
+        tanggalLabel.setFont(new Font(null,Font.BOLD,14)); 
+        tanggalLabel.setBounds(50, 130, 100, 50);
+        this.add(tanggalLabel);
 
+        this.setLayout(null);
+        bulanLabel = new JLabel("BULAN");
+        bulanLabel.setFont(new Font(null,Font.BOLD,14)); 
+        bulanLabel.setBounds(50, 170, 100, 50);
+        this.add(bulanLabel);        
+           
+        this.setLayout(null);
+        tahunLabel = new JLabel("TAHUN");
+        tahunLabel.setFont(new Font(null,Font.BOLD,14)); 
+        tahunLabel.setBounds(50, 220, 100, 30);
+        this.add(tahunLabel);
+        
         saveButton = new JButton();
         saveButton.setText("Save");
         saveButton.setBounds(110, 180, 80, 30);
@@ -84,7 +114,7 @@ public class TambahAntrianDialog extends JDialog implements ActionListener {
 
         noRekamMedisText.addActionListener(this);
         antriButton.addActionListener(this);
-        
+
     }
 
     @Override

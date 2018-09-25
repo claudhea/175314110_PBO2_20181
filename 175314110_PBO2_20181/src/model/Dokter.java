@@ -23,7 +23,7 @@ public class Dokter {
     private int tanggalLahir;
 
     public Dokter() {
-        
+
     }
 
     public Dokter(String noPegawai, String nama, String alamat, String tempatLahir, int tanggalLahir) {
@@ -49,12 +49,10 @@ public class Dokter {
      * @param noPegawai
      */
     public void setNoPegawai(String noPegawai) throws Exception {
-        try{
         if (noPegawai.length() == 5) {
             this.noPegawai = (noPegawai + nama.substring(0, 3));
-        }
-        }catch (Exception ex){
-            throw new Exception("Salah No Pegawai... ");
+        } else {
+            throw new Exception("No Pegawai Salah ... ");
         }
     }
 

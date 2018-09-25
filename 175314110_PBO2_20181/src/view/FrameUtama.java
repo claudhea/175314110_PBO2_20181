@@ -22,8 +22,9 @@ public class FrameUtama extends JFrame implements ActionListener {
 
     private JMenuBar menuBar;
     private JMenu fileMenu;
-    private JMenuItem tambahPasienMenuItem;
     private JMenuItem EXITMenuItem;
+    private JMenuItem TambahPasienBaruDialog;
+    private JMenuItem DaftarAntrianDialog;
 
     public FrameUtama()throws HeadlessException {
         init();
@@ -34,12 +35,17 @@ public class FrameUtama extends JFrame implements ActionListener {
         this.setTitle("Menu Pendaftaran");
         fileMenu = new JMenu("File");
         EXITMenuItem = new JMenuItem("Exit");
-        tambahPasienMenuItem = new JMenuItem (" Tambah Pasien");
+        TambahPasienBaruDialog = new JMenuItem (" Tambah Pasien");
         this.setJMenuBar(menuBar);
-        fileMenu.add(tambahPasienMenuItem);
+        fileMenu.add(TambahPasienBaruDialog);
         fileMenu.add(EXITMenuItem);
         menuBar.add(fileMenu);
+        
+        EXITMenuItem.addActionListener(this);
+        TambahPasienBaruDialog.addActionListener(this); 
+        DaftarAntrianDialog.addActionListener(this);
 
+        this.setJMenuBar(menuBar);
     }
 
     @Override
@@ -47,10 +53,16 @@ public class FrameUtama extends JFrame implements ActionListener {
         if (menu.getSource() == EXITMenuItem) {
             System.exit(0);
         }
-        if (menu.getSource() == tambahPasienMenuItem) {
+        if (menu.getSource() == TambahPasienBaruDialog) {
             TambahPasienBaruDialog test = new TambahPasienBaruDialog();
             test.setSize(500,500);
             test.setVisible(true);
+        }
+        if (menu.getSource() == DaftarAntrianDialog) {
+            TambahAntrianDialog test = new TambahAntrianDialog();
+            test.setSize(700,500);
+            test.setVisible(true);
+            
         }
     }
 }

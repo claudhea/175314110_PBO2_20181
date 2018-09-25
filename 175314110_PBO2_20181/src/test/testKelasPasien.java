@@ -14,9 +14,26 @@ import model.Pasien;
 public class testKelasPasien {
 
     public static void main(String[] args) {
-        Pasien test = new Pasien("Tika", "Klaten", "Medan", 12, 01, 1974, "19740112");
-        Pasien test1 = new Pasien("Raka", "Klaten", "Klaten", 10, 01, 1999, "19990110");
-
+        Pasien test = new Pasien(
+                "Puspa", // nama pasien
+                "Klaten", // alamat
+                "Medan", // tempat lahir
+                12, // tanggal lahir
+                01, // bulan lahir
+                1974, // tahun lahir
+                "19740112" // NIK
+        );
+        
+        Pasien test1 = new Pasien(
+                "Budi", // nama pasien
+                "Klaten", // alamat
+                "Klaten", // tempat lahir
+                10, // tanggal lahir
+                01, // bulan lahir
+                1999, // tahun lahir
+                "19990110" // NIK
+        );
+                
         Pasien.tambahPasienBaru(test);
         Pasien.tambahPasienBaru(test1);
 
