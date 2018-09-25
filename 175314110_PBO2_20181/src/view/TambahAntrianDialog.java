@@ -84,6 +84,7 @@ public class TambahAntrianDialog extends JDialog implements ActionListener {
 
         noRekamMedisText.addActionListener(this);
         antriButton.addActionListener(this);
+        
     }
 
     @Override
@@ -103,7 +104,7 @@ public class TambahAntrianDialog extends JDialog implements ActionListener {
             JOptionPane.showMessageDialog(null, alamatText.getText());
         }
         if (ae.getSource() == tambahButton) {
-            Pasien baru = new Pasien(null);
+            Pasien baru = new Pasien();
             baru.setNama(namaText.getText());
             baru.setAlamat(alamatText.getText());
 

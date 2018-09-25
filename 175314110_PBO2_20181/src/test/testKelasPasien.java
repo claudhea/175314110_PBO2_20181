@@ -21,8 +21,10 @@ public class testKelasPasien {
         Pasien.tambahPasienBaru(test1);
 
         for (int i = 0; i < Pasien.daftarPasien.size(); i++) {
-            Pasien cari = Pasien.cariPasien("19740112");
             System.out.println("Nama : " + Pasien.daftarPasien.get(i).getNama());
         }
+        
+        Pasien cari = Pasien.cariPasien("19740112"); 
+        System.out.println("Nama Hasil Pencarian = " + cari.getNama());
     }
 }

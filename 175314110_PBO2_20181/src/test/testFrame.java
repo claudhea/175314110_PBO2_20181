@@ -6,6 +6,7 @@
 package test;
 
 import java.awt.Frame;
+import javax.swing.JFrame;
 import view.FrameUtama;
 
 /**
@@ -18,5 +19,6 @@ public class testFrame {
         FrameUtama test = new FrameUtama();
         test.setSize(500, 400);
         test.setVisible(true);
+        test.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 }

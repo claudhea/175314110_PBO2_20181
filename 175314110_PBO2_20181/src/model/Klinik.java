@@ -16,6 +16,10 @@ public class Klinik {
     private String idKlinik;
     private String nama;
 
+    public Klinik() {
+        
+    }
+
     /**
      * method Klinik dengan parameter nama dan idKlinik bertipe String sebagai construktor
      * @param idKlinik 

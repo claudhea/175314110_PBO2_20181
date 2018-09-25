@@ -22,13 +22,16 @@ public class Dokter {
     private String tempatLahir;
     private int tanggalLahir;
 
-    /**
-     * method Dokter dengan parameter nama bertipe String sebagai construktor
-     *
-     * @param noPegawai
-     */
-    public Dokter(String noPegawai) {
+    public Dokter() {
+        
+    }
+
+    public Dokter(String noPegawai, String nama, String alamat, String tempatLahir, int tanggalLahir) {
         this.noPegawai = noPegawai;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.tempatLahir = tempatLahir;
+        this.tanggalLahir = tanggalLahir;
     }
 
     /**

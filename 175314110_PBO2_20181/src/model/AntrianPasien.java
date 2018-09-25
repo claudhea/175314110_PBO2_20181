@@ -24,7 +24,7 @@ public class AntrianPasien extends Pasien {
     private Pasien daftarPasienAntri[];
     public AntrianPasien daftarAntrian[];
     
-    private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
+//    private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
         
     /**
      * method AntrianPasien dengan parameter nama bertipe String sebagai construktor
@@ -179,14 +179,14 @@ public class AntrianPasien extends Pasien {
         return daftarPasien;
     }
 
-    /**
-     * suatu method untuk nilai dari variabel daftarPasien dengan variabel
-     * lokal daftarPasien yang bertipe ArrayList pasien
-     * @param daftarPasien 
-     */
-    public void DaftarPasien(ArrayList<Pasien> daftarPasien) {
-        this.daftarPasien = daftarPasien;
-    }
+//    /**
+//     * suatu method untuk nilai dari variabel daftarPasien dengan variabel
+//     * lokal daftarPasien yang bertipe ArrayList pasien
+//     * @param daftarPasien 
+//     */
+//    public void DaftarPasien(ArrayList<Pasien> daftarPasien) {
+//        this.daftarPasien = daftarPasien;
+//    }
     
     /**
      * Method untuk mendaftar pasien baru di nomor antrian
@@ -194,12 +194,12 @@ public class AntrianPasien extends Pasien {
      * @param pasien
      * @throws Exception
      */
-    public void Mendaftar(Pasien pasien, int tanggal, int bulan, int tahun) {
-        // mengisi data pada variabel daftarPasien dengan variabel lokal daftarPasien
-        tahunAntrian = tanggal;
-        bulanAntrian = bulan;
-        tahunAntrian = tahun;
-        daftarPasien.add(pasien);
+    public void Mendaftar(Pasien[] pasien) {
+        this.daftarPasienAntri = pasien;
+    }
+    
+    public void setDaftarPasien(Pasien[] daftarPasien) {
+        this.daftarPasienAntri = daftarPasien;
     }
     
     public void buatAntrian(int tanggal, int bulan, int tahun, Klinik klinik){

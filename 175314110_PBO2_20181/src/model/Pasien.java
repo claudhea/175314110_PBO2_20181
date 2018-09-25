@@ -33,15 +33,10 @@ public class Pasien{
 
     public static ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
 
-    /**
-     * method Pasien dengan parameter nama bertipe String sebagai construktor
-     *
-     * @param nama
-     */
-    public Pasien(String nama) {
-        this.nama = nama;
+    public Pasien() {
+        
     }
-
+    
     /**
      * constructor untuk mendeklarasikan objek pasien
      */
@@ -155,26 +150,16 @@ public class Pasien{
     public int getTanggalLahir() {
         return tanggalLahir;
     }
-
-    /**
-     * memberitahukan bahwa method tersebut dapat menyebabkan sebuah exception,
-     * lalu di cek pada bagian try lalu ditangkap dan ditampilkan pada bagian
-     * catch
-     *
-     * @param tanggalLahir
-     */
+    
     public void setTanggalLahir(int tanggalLahir) throws Exception {
-        /**
-         * pernyataan yang berpotensi mengakibatkan Exception jika tanggalLahir
-         * lebih besar 0 dan tanggalLahir kurang dari samadengan 31 Menyimpan
-         * Nilai dari obyek tanggalLahir ke variabel tanggalLahir
-         */
-        try {
-            if (tanggalLahir > 0 && tanggalLahir <= 31) {
+        if (tanggalLahir > 0) {
+            if (tanggalLahir < 32) {
                 this.tanggalLahir = tanggalLahir;
+            } else {
+                throw new Exception("Tanggal Lahir tidak wajar");
             }
-        } catch (Exception ex) {
-            throw new Exception("tanggalnya salah bos . . .");
+        } else {
+            throw new Exception("Tanggal Lahir tidak boleh nol");
         }
     }
 
@@ -187,28 +172,15 @@ public class Pasien{
         return bulanLahir;
     }
 
-    /**
-     * memberitahukan bahwa method tersebut dapat menyebabkan sebuah exception,
-     * lalu di cek pada bagian try lalu ditangkap dan ditampilkan pada bagian
-     * catch
-     *
-     * @param bulanLahir
-     */
     public void setBulanLahir(int bulanLahir) throws Exception {
-        /**
-         * pernyataan yang berpotensi mengakibatkan Exception jika bulanLahir
-         * lebih besar 0 dan bulanLahir kurang dari samadengan 12. Nilai dari
-         * obyek bulanLahir ke variabel bulanLahir
-         */
-        try {
-            if (bulanLahir > 0 && bulanLahir <= 12) {
+        if (bulanLahir > 0) {
+            if (bulanLahir <= 12) {
                 this.bulanLahir = bulanLahir;
+            } else {
+                throw new Exception("Bulan Lahir tidak wajar");
             }
-        } catch (Exception ex) {
-            /**
-             * pernyataan disini akan di eksekusi jika terjadi Exception
-             */
-            throw new Exception("bulannya salah bos . . .");
+        } else {
+            throw new Exception("Bulan Lahir tidak boleh nol");
         }
     }
 
@@ -221,28 +193,11 @@ public class Pasien{
         return tahunLahir;
     }
 
-    /**
-     * memberitahukan bahwa method tersebut dapat menyebabkan sebuah exception,
-     * lalu di cek pada bagian try lalu ditangkap dan ditampilkan pada bagian
-     * catch
-     *
-     * @param tahunLahir
-     */
     public void setTahunLahir(int tahunLahir) throws Exception {
-        /**
-         * pernyataan yang berpotensi mengakibatkan Exception jika tahunLahir
-         * lebih besar sama dengan 0 Menyimpan Nilai dari obyek tahunLahir ke
-         * variabel tahunLahir
-         */
-        try {
-            if (tahunLahir >= 0) {
-                this.tahunLahir = tahunLahir;
-            }
-        } catch (Exception ex) {
-            /**
-             * pernyataan disini akan di eksekusi jika terjadi Exception
-             */
-            throw new Exception("tahunnya salah bos . . .");
+        if (tahunLahir > 0) {
+            this.tahunLahir = tahunLahir;
+        } else {
+            throw new Exception("Tahun Lahir tidak boleh nol");
         }
     }
 
@@ -253,27 +208,9 @@ public class Pasien{
     public void setNik(String nik) {
         this.nik = nik;
     }
-
-    /**
-     * method untuk membuat nomor rekam medis yang terdiri dari tanggal pasien
-     * mengatri ditambah 3 huruf pertama dari nama
-     *
-     * @return
-     */
-    public String BuatNomorRekamMedis() {
-        String nomorRekamMEdis;
-        Date date = new Date();
-        SimpleDateFormat ft = new SimpleDateFormat(" ");
-        nomorRekamMEdis = ft.format(date) + nama.substring(0, 3);
-        return nomorRekamMEdis;
-    }
     
     public static void tambahPasienBaru(Pasien pasien) {
         Pasien.daftarPasien.add(pasien);
-    }
-
-    public void DaftarPasienBaru(Pasien pasien) {
-        daftarPasien.add(pasien);
     }
 
     public static Pasien cariPasien(String noRekamMedis) {
