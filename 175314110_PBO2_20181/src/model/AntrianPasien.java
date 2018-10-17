@@ -178,7 +178,7 @@ public class AntrianPasien {
      * @throws Exception
      */
     public void Mendaftar(Pasien pasien) {
-  
+        
     }
     
     public void setDaftarPasien(Pasien daftarPasien[]) {

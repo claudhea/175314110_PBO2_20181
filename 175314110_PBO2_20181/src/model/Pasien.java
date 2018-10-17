@@ -5,18 +5,23 @@
  */
 package model;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author admin
  */
-public class Pasien{
+public class Pasien {
 
-    
-    
     /**
      * variabel nama, alamat yang dideklarasikan sebagai private dengan tipe
      * String variabel noRekamMedis, tempatLahir, tanggalLahir, bulanLahir,
@@ -30,13 +35,21 @@ public class Pasien{
     private int tanggalLahir;
     private int bulanLahir;
     private int tahunLahir;
+    public Pasien[] daftarPasienKlinik;
 
     public static ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
 
     public Pasien() {
-        
     }
-    
+
+    public static ArrayList<Pasien> getDaftarPasien() {
+        return daftarPasien;
+    }
+
+    public static void setDaftarPasien(ArrayList<Pasien> DaftarPasien) {
+        daftarPasien = DaftarPasien;
+    }
+
     /**
      * constructor untuk mendeklarasikan objek pasien
      */
@@ -150,7 +163,7 @@ public class Pasien{
     public int getTanggalLahir() {
         return tanggalLahir;
     }
-    
+
     public void setTanggalLahir(int tanggalLahir) throws Exception {
         if (tanggalLahir > 0) {
             if (tanggalLahir < 32) {
@@ -208,17 +221,44 @@ public class Pasien{
     public void setNik(String nik) {
         this.nik = nik;
     }
-    
+
+    public static void tambahPasien(Pasien pasien) {
+        daftarPasien.add(pasien);
+    }
+
     public static void tambahPasienBaru(Pasien pasien) {
-        Pasien.daftarPasien.add(pasien);
+        getDaftarPasien().add(pasien);
     }
 
     public static Pasien cariPasien(String noRekamMedis) {
-        for (int i = 0; i < daftarPasien.size(); i++) {
+        for (int i = 0; i < getDaftarPasien().size(); i++) {
             if (daftarPasien.get(i).getNoRekamMedis() == noRekamMedis) {
                 return daftarPasien.get(i);
             }
         }
         return null;
+    }
+
+    public String toString() {
+        return noRekamMedis + "\t" + nama + "\t" + alamat + "\n";
+    }
+
+    public static void bacaDaftarPasien(File file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void simpanDaftarPasien(File file) {
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            for (int i = 0; i < daftarPasien.size(); i++) {
+                String data = daftarPasien.get(i).toString();
+                fos.write(data.getBytes());
+            }
+            fos.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
