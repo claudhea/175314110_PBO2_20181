@@ -176,6 +176,16 @@ public class Pasien {
         }
     }
 
+    public void setNIK(String NIK) throws Exception {
+        if (NIK.length() == 16) {
+            String nik = NIK;
+            this.setNoRekamMedis(nik);
+            this.nik = NIK;
+        } else {
+            throw new Exception("Nomor Induk Kependudukan terdiri dari 16 karakter");
+        }
+    }
+
     /**
      * method untuk membaca Nilai balikan dari variabel BulanLahir()
      *
@@ -218,10 +228,6 @@ public class Pasien {
         return nik;
     }
 
-    public void setNik(String nik) {
-        this.nik = nik;
-    }
-
     public static void tambahPasien(Pasien pasien) {
         daftarPasien.add(pasien);
     }
@@ -244,21 +250,56 @@ public class Pasien {
     }
 
     public static void bacaDaftarPasien(File file) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static void simpanDaftarPasien(File file) {
+        FileInputStream fis = null;
+        String hasil = "";
+        int dataInt;
+        boolean nama = false;
+        boolean alamat = false;
+        Pasien temp = new Pasien();
         try {
-            FileOutputStream fos = new FileOutputStream(file);
-            for (int i = 0; i < daftarPasien.size(); i++) {
-                String data = daftarPasien.get(i).toString();
-                fos.write(data.getBytes());
+            fis = new FileInputStream(file);
+            while ((dataInt = fis.read()) != -1) {
+                if ((char) dataInt != '\n') {
+                    if ((char) dataInt != '\t') {
+                        hasil = hasil + (char) dataInt;
+                    } else if (nama == false) {
+                        temp.setNama(hasil);
+                        nama = true;
+                        hasil = "";
+                    } else if (alamat == false) {
+                        temp.setAlamat(hasil);
+                        alamat = true;
+                        hasil = "";
+                    }
+                }
             }
-            fos.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public static void simpanDaftarPasien(File file) {
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(file, false);
+            for (int i = 0; i < daftarPasien.size(); i++) {
+                String data = daftarPasien.get(i).toString();
+                fos.write(data.getBytes());
+
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }
