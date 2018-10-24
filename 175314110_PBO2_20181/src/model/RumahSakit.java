@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,11 +21,13 @@ import static model.Pasien.getDaftarPasien;
  *
  * @author admin
  */
-public class RumahSakit {
+public class RumahSakit implements Serializable {
 
     private String nama, alamat;
+    private int tanggalRS, bulanRS, tahunRS;
     private Pasien[] daftarPasien;
     private Klinik[] klinik;
+    private AntrianKlinik[] daftarAntrian;
 
     private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
     private ArrayList<Klinik> daftarKlinik = new ArrayList<Klinik>();
@@ -113,10 +116,10 @@ public class RumahSakit {
 
     }
 
-    public ArrayList<Pasien> getDaftarPasien(){
+    public ArrayList<Pasien> getDaftarPasien() {
         return daftarPasien;
     }
-    
+
     public Pasien[] getDaftarPasien() {
         return daftarPasien;
     }
@@ -157,7 +160,7 @@ public class RumahSakit {
 
     }
 
-    public void buatAntrian(int tanggal, int bulan, int tahun, Klinik klinik) {
+    public void buatAntrian(int tanggal, int bulan, int tahun, Klinik klinik) throws Exception {
         AntrianKlinik antrian = new AntrianKlinik();
         antrian.setTanggalAntrian(tanggal);
         antrian.setBulanAntrian(bulan);
@@ -176,7 +179,27 @@ public class RumahSakit {
         return -1;
     }
 
-    public void daftarPasien(Pasien pasien, int tanggal, int bulan, int tahun, Klinik klinik) {
+    public void daftarPasien(Pasien[] pasien, int tanggal, int bulan, int tahun, Klinik[] klinik) {
+       this.tanggalRS = tanggal;
+       this.bulanRS = bulan;
+       this.tahunRS = tahun;
+       this.klinik = klinik;
+       this.daftarPasien = pasien;
+    }
 
+    public ArrayList<AntrianKlinik> getDaftarAntrianKlinik() {
+        return daftarAntrianKlinik;
+    }
+
+    public void setDaftarAntrianKlinik(ArrayList<AntrianKlinik> daftarAntrianKlinik) {
+        this.daftarAntrianKlinik = daftarAntrianKlinik;
+    }
+
+    public ArrayList<Klinik> getDaftarKlinik() {
+        return daftarKlinik;
+    }
+
+    public void setDaftarKlinik(ArrayList<Klinik> daftarKlinik) {
+        this.daftarKlinik = daftarKlinik;
     }
 }

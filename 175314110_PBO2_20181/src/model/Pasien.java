@@ -27,14 +27,8 @@ public class Pasien {
      * String variabel noRekamMedis, tempatLahir, tanggalLahir, bulanLahir,
      * tahunLahir yang dideklarasikan sebagai private dengan tipe integer
      */
-    private String nama;
-    private String alamat;
-    private String noRekamMedis;
-    private String nik;
-    private String tempatLahir;
-    private int tanggalLahir;
-    private int bulanLahir;
-    private int tahunLahir;
+    private String nama, alamat, noRekamMedis, nik, tempatLahir;
+    private int tanggalLahir, bulanLahir, tahunLahir;
     public Pasien[] daftarPasienKlinik;
 
     public static ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
