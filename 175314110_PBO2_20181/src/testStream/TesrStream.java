@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test;
+package testStream;
 
 import java.io.File;
 import model.Pasien;

@@ -15,8 +15,7 @@ public class Klinik {
     /**
      *variabel idKlinik, nama yang dideklarasikan sebagai private dengan tipe String
      */
-    private String idKlinik;
-    private String nama;
+    private String idKlinik, namaKlinik;
 
     
     public static ArrayList<Klinik> KLINIK = new ArrayList<Klinik>();
@@ -31,7 +30,7 @@ public class Klinik {
      */
     public Klinik(String idKlinik, String nama) {
         this.idKlinik = idKlinik;
-        this.nama = nama;
+        this.namaKlinik = nama;
     }
 
     /**
@@ -55,15 +54,15 @@ public class Klinik {
      * @return 
      */
     public String getNama() {
-        return nama;
+        return namaKlinik;
     }
 
     /**
      * method dengan parameter berupa variabel nama yang bertipe String
      * @param nama 
      */
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setNama(String nk) {
+        this.namaKlinik = nk;
     }
     
     public static void daftar(Klinik klinik){

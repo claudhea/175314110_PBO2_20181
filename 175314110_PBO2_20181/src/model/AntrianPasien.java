@@ -171,16 +171,6 @@ public class AntrianPasien {
         this.daftarAntrian = daftarAntrian;
     }
     
-    /**
-     * Method untuk mendaftar pasien baru di nomor antrian
-     *
-     * @param pasien
-     * @throws Exception
-     */
-    public void Mendaftar(Pasien pasien) {
-        
-    }
-    
     public void setDaftarPasien(Pasien daftarPasien[]) {
         this.daftarPasienAntri = daftarPasien;
     }

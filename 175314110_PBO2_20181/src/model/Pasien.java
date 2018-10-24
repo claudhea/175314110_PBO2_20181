@@ -278,7 +278,6 @@ public class Pasien {
         } catch (IOException ex) {
             Logger.getLogger(Pasien.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public static void simpanDaftarPasien(File file) {
